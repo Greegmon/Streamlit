@@ -13,8 +13,8 @@ log = col2.button("Login")
 if log:
 	st.switch_page('pages/login.py')
 if sign:
-	ku = username.split('')
-	pal = password.split('')
+	ku = username.split()
+	pal = password.split()
 	if  not username or not password or not password2:
 		st.warning('Missing Input Value')
 	elif password != password2:
