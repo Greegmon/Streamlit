@@ -13,6 +13,8 @@ log = col2.button("Login")
 if log:
 	st.switch_page('pages/login.py')
 if sign:
+	ku = username.split('')
+	pal = password.split('')
 	if  not username or not password or not password2:
 		st.warning('Missing Input Value')
 	elif password != password2:
@@ -25,6 +27,8 @@ if sign:
 		st.error('Username max length is 16')
 	elif password == password2 and len(password) > 16:
 		st.error('Password max length is 16')
+	elif ' ' in ku or ' ' in pal:
+		st.error('Space is not allowed')
 	else:
 		signup = User.signup(username, password)
 		if signup['status'] == False:
